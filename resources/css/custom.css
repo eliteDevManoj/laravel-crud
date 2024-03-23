@@ -1,0 +1,26 @@
+.home {
+    height: 100vh
+}
+
+.home .home-header {
+    background-color: #1c77ac;
+}
+
+.home .home-header .nav-link {
+    color: white;
+}
+
+.home .home-header .nav-link:hover {
+    background: white;
+    color: #1c77ac;
+}
+
+.home .home-header .nav-link-active {
+    background: white;
+    color: #1c77ac;
+}
+
+.home-footer {
+    background-color: #1c77ac;
+    color: white;
+}
