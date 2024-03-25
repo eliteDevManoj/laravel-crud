@@ -10,6 +10,11 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
+    <script>
+        window.APP_URL = "{{ config('app.app_url') }}";
+        window.API_URL = "{{ config('app.api_url') }}";
+    </script>
+
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
     <body>

@@ -39,14 +39,28 @@ class InitSeeder extends Seeder
         $deleteUser = Permission::create(['name' => 'delete-user']);
         $viewUser = Permission::create(['name' => 'view-user']);
 
+        $createPermission = Permission::create(['name' => 'create-permission']);
+        $editPermission = Permission::create(['name' => 'edit-permission']);
+        $deletePermission = Permission::create(['name' => 'delete-permission']);
+        $viewPermission= Permission::create(['name' => 'view-permission']);
+
+        //Super admin permissions
         $superAdminRole->givePermissionTo($createUser);
         $superAdminRole->givePermissionTo($editUser);
         $superAdminRole->givePermissionTo($deleteUser);
         $superAdminRole->givePermissionTo($viewUser);
 
+        $superAdminRole->givePermissionTo($createPermission);
+        $superAdminRole->givePermissionTo($editPermission);
+        $superAdminRole->givePermissionTo($deletePermission);
+        $superAdminRole->givePermissionTo($viewPermission);
+        
+        //Admin permissions
         $adminRole->givePermissionTo($createUser);
         $adminRole->givePermissionTo($editUser);
         $adminRole->givePermissionTo($viewUser);
+
+        $adminRole->givePermissionTo($viewPermission);
 
         //create admin user
         $superAdmin = User::create([
@@ -57,6 +71,16 @@ class InitSeeder extends Seeder
         
         if($superAdmin){
             $superAdmin->assignRole('super admin');
+
+            $superAdmin->givePermissionTo($createUser);
+            $superAdmin->givePermissionTo($editUser);
+            $superAdmin->givePermissionTo($deleteUser);
+            $superAdmin->givePermissionTo($viewUser);
+
+            $superAdmin->givePermissionTo($createPermission);
+            $superAdmin->givePermissionTo($editPermission);
+            $superAdmin->givePermissionTo($deletePermission);
+            $superAdmin->givePermissionTo($viewPermission);
         }
     }
 }

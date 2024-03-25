@@ -1,7 +1,8 @@
 <?php
 use Illuminate\Support\Facades\Route;
 
-use App\Http\Controllers\HomeController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\WebController;
 
 /*
@@ -18,5 +19,8 @@ Auth::routes();
 
 Route::get('/', [WebController::class, 'welcome'])->name('welcome');
 
-Route::get('/dashboard', [HomeController::class, 'index'])->name('dashboard');
+Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
+Route::get('/admin/users', [UserController::class, 'index'])->name('admin.users');
+
+Route::get('/admin/create-user', [UserController::class, 'create'])->name('admin.create.user');

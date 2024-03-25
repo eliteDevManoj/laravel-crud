@@ -24,3 +24,21 @@
     background-color: #1c77ac;
     color: white;
 }
+
+.sidebar-divder {
+    border-top: 1px solid #1c77ac;
+}
+
+#myTable_wrapper {
+    width: 100%;
+    color: #1c77ac;
+}
+
+.dt-input:focus {
+    outline-color: #1c77ac;
+}
+
+table.dataTable thead>tr>th.dt-orderable-asc, 
+table.dataTable thead>tr>th.dt-orderable-desc{
+    text-align: center;
+}
